@@ -48,12 +48,7 @@ const Hero = () => {
           >
             Start Building Now
           </a>
-          <a
-            href="#"
-            className="bg-brand-gray-dark hover:bg-opacity-75 text-white px-8 py-3 rounded-md text-lg font-semibold transition-colors w-full sm:w-auto"
-          >
-            Watch video
-          </a>
+          
         </div>
 
         {/* Product image placeholder */}
