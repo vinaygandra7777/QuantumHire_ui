@@ -14,7 +14,7 @@ const DashboardLayout = ({ children }) => {
        </header>
 
        <div className="flex flex-1 pt-16"> {/* Add padding top to avoid overlap with fixed header */}
-          <Sidebar />
+          <Sidebar/>
           {/* Main content area */}
           <main className="flex-1 p-6 md:p-10 overflow-y-auto bg-brand-dark"> {/* Ensure content scrolls */}
             {children}

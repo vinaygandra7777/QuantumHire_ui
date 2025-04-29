@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import DashboardLayout from '../layouts/DashboardLayout';
-import UploadArea from '../components/Fashboard/UploadArea';
+import DashboardLayout from '../Layouts/DashboardLayout';
+import UploadArea from '../components/Dashboard/UploadArea';
 import ScoreDisplay from '../components/Dashboard/ScoreDisplay';
 import FeedbackPanel from '../components/Dashboard/FeedbackPanel';
 import { motion } from 'framer-motion';
