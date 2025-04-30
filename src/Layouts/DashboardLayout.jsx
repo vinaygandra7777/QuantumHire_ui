@@ -1,37 +1,32 @@
 import React from 'react';
-import Sidebar from '../components/Dashboard/Sidebar'; // Assuming Sidebar handles its content
+// Removed: import Sidebar from '../components/Dashboard/Sidebar';
 
 const DashboardLayout = ({ children }) => {
-  // Define the width of the sidebar using a Tailwind class
-  // Ensure your Sidebar component is styled to respect this width
-  const sidebarWidthClass = 'w-64'; // Example: 16rem width
+  // sidebarWidthClass is no longer needed as there's no sidebar
+  // const sidebarWidthClass = 'w-30'; // Removed
 
-  // Define the height of the header using a Tailwind spacing scale
-  // This helps position elements correctly below the header
-  const headerHeightClass = 'h-16'; // Example: Adjust based on your header's actual height (p-4 might be around 8 units, let's use 16 for clarity/consistency with original pt-16)
+  // headerHeightClass is still relevant for calculating top padding
+  const headerHeightClass = 'h-16'; // Navbar height is 16 (4rem)
   const headerPaddingTopClass = 'pt-16'; // Match this padding on content below header
 
   return (
-    // Outer container - fills the screen height, base background color
-    // We don't need flex-col here as header/sidebar/main will be positioned relative to viewport or each other
-    <div className="min-h-screen bg-brand-dark text-white">
-       {/* Sidebar */}
-       {/* Positioned fixed to the left, below the header, full height remaining */}
-       {/* Add overflow-y-auto so sidebar content can scroll if it's too long */}
-       <div className={`fixed top-16 bottom-0 left-0 ${sidebarWidthClass} overflow-y-auto bg-brand-gray-extradark z-30`}>
-         <Sidebar/> {/* Your Sidebar component goes here */}
-       </div>
+    // Outer container - fills the screen height, pure black background
+    // The min-h-screen here is crucial for ensuring the page takes at least the full viewport height
+    <div className="min-h-screen bg-brand-black text-white"> {/* Changed bg-brand-dark to bg-brand-black */}
+       {/* Navbar is expected to be rendered elsewhere, likely fixed at the top,
+           or you could add it here if it's part of *this* layout,
+           but based on App.jsx structure, it's part of the LandingPageLayout
+           and DashboardLayout implicitly assumes it's there (hence pt-16).
+           Assuming Navbar is handled at the root or App.jsx level.
+           If Navbar should be part of this layout, add it here:
+           <Navbar />
+       */}
 
        {/* Main Content Area */}
-       {/* This main area needs to:
-           1. Be pushed to the right to make space for the fixed sidebar (ml-64)
-           2. Have padding at the top to clear the fixed header (pt-16)
-           3. Allow its own content to scroll (overflow-y-auto)
-           4. Take up the remaining horizontal space (achieved implicitly by ml-* on flex-1 or block)
-       */}
-       <main className={`p-6 md:p-10 overflow-y-auto bg-brand-dark ${headerPaddingTopClass} ${sidebarWidthClass === 'w-64' ? 'ml-64' : ''}`}
-             style={{ height: `calc(100vh - ${headerHeightClass.replace('h-', '') * 0.25}rem)` }}>
-           {/* Using style height calc to ensure main content takes the exact height below header for proper scrolling within this div */}
+       {/* Removed ml- classes */}
+       {/* Removed overflow-y-auto from this main tag - let children control scrolling or rely on body/root scrolling */}
+       {/* Removed the problematic style={{ height: 'calc(...)' }} */}
+       <main className={`p-6 md:p-10 bg-brand-black ${headerPaddingTopClass}`}> {/* Changed bg-brand-dark to bg-brand-black */}
            {children} {/* The page-specific content (Resume Analysis, UploadArea, etc.) */}
        </main>
     </div>

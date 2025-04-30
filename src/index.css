@@ -6,7 +6,8 @@
 @tailwind utilities;
 
 body {
-  @apply bg-brand-dark text-brand-gray-light font-sans antialiased;
+  /* @apply bg-brand-dark text-brand-gray-light font-sans antialiased; */
+  @apply bg-brand-black text-brand-gray-light font-sans antialiased;
   /* Add the background pattern */
   background-image: url('/path/to/your/pattern.svg'); /* Adjust path */
   background-repeat: repeat;

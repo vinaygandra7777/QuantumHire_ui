@@ -9,6 +9,7 @@ import Features from './components/Features';
 import Pricing from './components/Pricing';
 import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
+import FAQ from './components/FAQ';
 
 // Import Dashboard Page
 import DashboardPage from './pages/DashboardPage';
@@ -23,6 +24,8 @@ const LandingPageLayout = () => (
       <Features />
       <Pricing />
       <CallToAction />
+      <FAQ />
+      {/* Add any other sections you want on the landing page */}
     </main>
     <Footer />
   </div>
