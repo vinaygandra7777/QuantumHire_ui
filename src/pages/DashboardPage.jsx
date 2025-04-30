@@ -6,8 +6,8 @@ import FeedbackPanel from '../components/Dashboard/FeedbackPanel';
 import { motion } from 'framer-motion';
 
 const DashboardPage = () => {
-  const [atsScore, setAtsScore] = useState(null); // Example: 78
-  const [analysisFeedback, setAnalysisFeedback] = useState(null); // Example feedback object
+  const [atsScore, setAtsScore] = useState(null); // State to hold the ATS score
+  const [analysisFeedback, setAnalysisFeedback] = useState(null); // State to hold the analysis feedback
 
   // Dummy function to simulate API call after file upload
   const handleResumeUpload = (file) => {
@@ -19,7 +19,7 @@ const DashboardPage = () => {
     // *** Replace with actual API call to your backend ***
     // Simulate API response after a delay
     setTimeout(() => {
-      // Dummy data - replace with actual API response
+      // Dummy data - replace with actual API response structure
       const dummyScore = Math.floor(Math.random() * 50) + 50; // Score between 50-99
       const dummyFeedback = {
          strengths: [
@@ -45,7 +45,7 @@ const DashboardPage = () => {
     <DashboardLayout>
         {/* Page Title */}
         <motion.h1
-          className="text-3xl font-bold text-white mb-8"
+          className="text-3xl font-bold text-white mb-8 mt-10"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -53,28 +53,42 @@ const DashboardPage = () => {
             Resume Analysis
         </motion.h1>
 
-        {/* Main Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Left Column (Upload + Score) */}
+        {/* Main content area - now a single column */}
+        {/* Use space-y-* for vertical spacing between sections */}
+        <div className="space-y-6">
+
+            {/* Upload Area */}
             <motion.div
-                className="lg:col-span-1 space-y-6"
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
+                 initial={{ opacity: 0, y: 20 }} // Staggered entrance from below
+                 animate={{ opacity: 1, y: 0 }}
+                 transition={{ duration: 0.5, delay: 0.1 }}
             >
                 <UploadArea onFileUpload={handleResumeUpload} />
-                <ScoreDisplay score={atsScore} />
             </motion.div>
 
-            {/* Right Column (Feedback) */}
-            <motion.div
-                className="lg:col-span-2"
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-             >
-                <FeedbackPanel feedback={analysisFeedback} />
-             </motion.div>
+            {/* Compatibility Score */}
+            {/* Only show score after upload and calculation */}
+            {atsScore !== null && (
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }} // Staggered entrance
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }} // Slight delay
+                >
+                    <ScoreDisplay score={atsScore} />
+                </motion.div>
+            )}
+
+            {/* AI Feedback & Analysis */}
+            {/* Only show feedback after upload and calculation */}
+            {analysisFeedback !== null && (
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }} // Staggered entrance
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }} // Further delay
+                >
+                    <FeedbackPanel feedback={analysisFeedback} />
+                </motion.div>
+            )}
         </div>
     </DashboardLayout>
   );

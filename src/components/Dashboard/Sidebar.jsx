@@ -1,18 +1,20 @@
 import React from 'react';
-import { LayoutDashboard, FileText, Settings, LogOut } from 'lucide-react'; // Example Icons
+import { LayoutDashboard, FileText, Settings, LogOut, SparkleIcon } from 'lucide-react'; // Example Icons
 
 const Sidebar = () => {
   const navItems = [
-    { name: 'Dashboard', icon: LayoutDashboard, href: '#' }, // Replace # with actual paths
-    { name: 'My Resumes', icon: FileText, href: '#' },
+    { name: 'ATS Score', icon: SparkleIcon, href: '#' }, // Replace # with actual paths
+    { name: 'Resume Builder', icon: FileText, href: '#' },
+    { name: 'Best Resume Picker', icon: FileText, href: '#' },
     { name: 'Settings', icon: Settings, href: '#' },
   ];
 
   return (
-    // Fixed sidebar for desktop, potentially collapsible or off-canvas for mobile
-    <aside className="fixed top-0 left-0 z-30 w-64 h-screen pt-16 transition-transform -translate-x-full bg-brand-gray-extradark border-r border-brand-gray-dark md:translate-x-0" aria-label="Sidebar"> {/* Adjust pt */}
+    
+    <aside className="fixed top-0 left-0 z-30 w-64 h-screen pt-16 transition-transform -translate-x-full bg-brand-gray-extradark border-r border-brand-gray-dark md:translate-x-0" aria-label="Sidebar"> 
+       {/* Adjust pt */}
         <div className="h-full px-3 pb-4 overflow-y-auto bg-brand-gray-extradark">
-            <ul className="space-y-2 font-medium mt-4">
+            <ul className="space-y-4 font-medium mt-4">
                 {navItems.map((item) => (
                     <li key={item.name}>
                         <a
