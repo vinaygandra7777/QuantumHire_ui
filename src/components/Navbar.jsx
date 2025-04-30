@@ -1,6 +1,7 @@
 // src/components/Navbar.js
 import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react'; // Example using lucide-react icons
+import { Menu, X } from 'lucide-react'; 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'// Example using lucide-react icons
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,8 +20,8 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-  <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">
-    QuantumHire <span className="text-white">AI</span>
+  <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">
+    QuantumHire.<span className="text-white">AI</span>
   </span>
 </div>
 
@@ -44,8 +45,9 @@ const Navbar = () => {
              <a href="#" className="text-brand-gray hover:text-white px-3 py-2 rounded-md text-sm font-medium mr-2 transition-colors">
                Login
              </a>
+             
              <a
-               href="#"
+               href="/dashboard"
                className="bg-brand-purple hover:bg-brand-purple-light text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
              >
                Get started
@@ -90,7 +92,7 @@ const Navbar = () => {
                Login
            </a>
            <a
-             href="#"
+             link="/dashboard"
              className="block w-full text-center bg-brand-purple hover:bg-brand-purple-light text-white px-4 py-2 rounded-md text-base font-medium transition-colors"
            >
              Get started

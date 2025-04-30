@@ -44,7 +44,7 @@ const Hero = () => {
         {/* Glassy Tag */}
         <motion.div variants={itemVariants} className="mb-5 md:mb-6 flex justify-center">
           <a
-            href="#"
+            href="#" // Replace with actual link if needed
             className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm transition-colors duration-200"
           >
             <Sparkles className="h-4 w-4 text-white/80 mr-2" />
@@ -76,26 +76,35 @@ const Hero = () => {
           className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-16"
         >
           <motion.a
-            href="#"
+            href="/dashboard" // Replace with actual link if needed
             className="bg-brand-purple hover:bg-brand-purple-light text-white px-8 py-3 rounded-md text-lg font-semibold transition-colors w-full sm:w-auto block" // Added block for motion layout
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             Start Building Now
           </motion.a>
+          {/* Add a secondary button here if needed, styled appropriately */}
         </motion.div>
 
-        {/* Product image placeholder */}
+        {/* Product image container */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }} // Delay after text/buttons
-          className="relative max-w-5xl mx-auto bg-brand-gray-extradark rounded-lg shadow-2xl p-4 border border-brand-gray-dark"
+          className="relative max-w-3xl mx-auto bg-brand-gray-extradark rounded-lg shadow-2xl p-4 border border-brand-gray-dark"
         >
+          {/* Keep the gradient background effect */}
           <div className="absolute inset-[-1px] rounded-lg bg-gradient-to-br from-brand-purple/50 via-transparent to-brand-purple/50 opacity-70 blur-lg -z-10" aria-hidden="true"/>
-          <div className="relative z-10 aspect-video bg-brand-dark rounded flex items-center justify-center">
-            <span className="text-brand-gray">Product UI Screenshot Placeholder</span>
-          </div>
+
+          {/* --- Image Tag --- */}
+          <img
+            // !! IMPORTANT: Replace this path with the actual path to your image file !!
+            src="/src/assets/image1.png" // Example path, adjust as needed
+            alt="Screenshot of the resume builder tool interface" // Accessible alternative text
+            className="relative z-10 max-w-[800px] mx-auto  h-auto rounded-lg object-cover" // Styling for the image
+          />
+          {/* ------------------ */}
+
         </motion.div>
       </motion.div>
     </section>
