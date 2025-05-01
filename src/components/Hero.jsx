@@ -1,6 +1,7 @@
 import React from 'react';
 import { Sparkles } from 'lucide-react';
-import { motion } from 'framer-motion'; // Import motion
+import { motion } from 'framer-motion'; 
+import Rellax from 'rellax';// Import motion
 
 // Animation variants for staggered effect
 const containerVariants = {
@@ -24,13 +25,16 @@ const itemVariants = {
 const Hero = () => {
   return (
     <section className="relative overflow-hidden pt-28 pb-20 md:pt-40 md:pb-32 px-4">
+      
       {/* Background Glows (remain static or add subtle pulse if desired) */}
       <div
-        className="absolute top-[-50px] left-[10%] w-[500px] h-[500px] bg-brand-purple rounded-full opacity-15 blur-[100px] -z-10"
+        className="absolute top-[-50px] left-[10%] w-[500px] h-[500px] bg-brand-purple rounded-full opacity-15 blur-[100px] -z-10 rellax"
+         data-rellax-speed="-4"
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-[-100px] right-[5%] w-[600px] h-[400px] bg-brand-purple-light rounded-full opacity-10 blur-[120px] -z-10"
+        className="absolute bottom-[-100px] right-[5%] w-[600px] h-[400px] bg-brand-purple-light rounded-full opacity-10 blur-[120px] -z-10 rellax"
+         data-rellax-speed="-5"
         aria-hidden="true"
       />
 
@@ -91,7 +95,8 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }} // Delay after text/buttons
-          className="relative max-w-3xl mx-auto bg-brand-gray-extradark rounded-lg shadow-2xl p-4 border border-brand-gray-dark"
+          className="relative max-w-3xl mx-auto bg-brand-gray-extradark rounded-lg shadow-2xl p-4 border border-brand-gray-dark rellax"
+          data-rellax-speed="-2"
         >
           {/* Keep the gradient background effect */}
           <div className="absolute inset-[-1px] rounded-lg bg-gradient-to-br from-brand-purple/50 via-transparent to-brand-purple/50 opacity-70 blur-lg -z-10" aria-hidden="true"/>

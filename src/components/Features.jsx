@@ -65,6 +65,7 @@ const Features = () => {
   return (
     <section className="py-20 px-4 "> {/* Removed example bg */}
         <div className="max-w-7xl mx-auto">
+      
             {/* Introductory Text Animation */}
             <motion.div
                 className="text-center mb-16"
@@ -79,7 +80,7 @@ const Features = () => {
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4">
                     Elevate Your Hiring & Job Search <br /> with AI Precision
                 </h2>
-                <p className="text-lg md:text-xl text-brand-gray max-w-3xl mx-auto">
+                <p className="text-lg md:text-xl text-brand-gray max-w-3xl mx-auto ">
                     Leverage cutting-edge AI to analyze, build, and optimize resumes, ensuring you find the perfect fit or land your dream job faster.
                 </p>
             </motion.div>

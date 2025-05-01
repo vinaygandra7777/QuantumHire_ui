@@ -48,3 +48,23 @@ body {
   font-style: normal;
   font-display: swap;
 }
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0); /* Start at the original position */
+  }
+  100% {
+    transform: translateX(-50%); /* Move left by 50% of the container's width */
+    /* Translating by exactly -50% works when the content is duplicated exactly once,
+       making the end state match the start of the second set of logos. */
+  }
+}
+
+/* --- ADDED: Apply the Animation (using a custom class or Tailwind's arbitrary) --- */
+/* We used 'animate-scroll-left' class in TrustedBy.jsx */
+/* You can define this directly in your CSS */
+.animate-scroll-left {
+    animation: scroll-left 40s linear infinite; /* Adjust duration (40s) as needed */
+    /* animation-duration: 40s; /* Tailwind approach if using arbitrary values */
+    /* animation-timing-function: linear; */
+    /* animation-iteration-count: infinite; */
+}
