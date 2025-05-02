@@ -38,7 +38,7 @@ const CallToAction = () => {
                 transition={{ duration: 0.5, delay: 0.2 }} // Slight delay
             >
                 <div className="aspect-video bg-brand-dark rounded flex items-center justify-center">
-                    <img src="/src/assets/image3.png" 
+                    <img src="/src/assets/image6.png" 
                     className="relative z-10 max-w-[500px] mx-auto  h-auto rounded-lg object-cover"></img>
                 </div>
             </motion.div>
