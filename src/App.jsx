@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'; // Import useEffect
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Rellax from 'rellax'; // Import Rellax library
+import Rellax from 'rellax';
 
 // Import Landing Page Components
 import Navbar from './components/Navbar';
@@ -14,6 +14,8 @@ import FAQ from './components/FAQ';
 
 // Import Dashboard Page
 import DashboardPage from './pages/DashboardPage';
+// Import ResumeBuilder Page
+import ResumeBuilder from './pages/ResumeBuilder'; // <--- Import ResumeBuilder
 
 // Optional: Create a component for the landing page layout
 const LandingPageLayout = () => {
@@ -78,6 +80,10 @@ function App() {
 
         {/* Route for the Dashboard */}
         <Route path="/dashboard" element={<DashboardPage />} />
+
+        {/* Route for the Resume Builder Page */}
+        {/* --- ADD THIS ROUTE --- */}
+        <Route path="/resume-builder" element={<ResumeBuilder />} />
 
         {/* Add other routes like Login, Signup, etc. */}
       </Routes>

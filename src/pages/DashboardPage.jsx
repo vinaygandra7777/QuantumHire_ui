@@ -3,8 +3,11 @@ import DashboardLayout from '../Layouts/DashboardLayout';
 import UploadArea from '../components/Dashboard/UploadArea';
 import ScoreDisplay from '../components/Dashboard/ScoreDisplay';
 import FeedbackPanel from '../components/Dashboard/FeedbackPanel';
-import ToolSelection from '../components/Dashboard/ToolSelection'; // Import the new selection component
-import { motion, AnimatePresence } from 'framer-motion'; // Import AnimatePresence
+import ToolSelection from '../components/Dashboard/ToolSelection';
+import { motion, AnimatePresence } from 'framer-motion';
+// --- IMPORT useNavigate ---
+import { useNavigate } from 'react-router-dom';
+
 
 const DashboardPage = () => {
   // State to control which part of the dashboard is shown
@@ -15,12 +18,19 @@ const DashboardPage = () => {
   const [analysisFeedback, setAnalysisFeedback] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  // --- INITIALIZE useNavigate ---
+  const navigate = useNavigate();
+
   // Function called by ToolSelection when a tool is chosen
   const handleToolSelected = (toolId) => {
     if (toolId === 'ats-checker') {
       setCurrentView('ats-analysis'); // Move to the ATS view
       // Optionally reset ATS states here if needed on entry, but upload handles reset
-    } else {
+    } else if (toolId === 'resume-builder') { // --- CHECK FOR RESUME BUILDER ---
+      // Navigate to the Resume Builder page
+      navigate('/resume-builder'); // --- NAVIGATE TO THE NEW ROUTE ---
+    }
+    else {
       // Handle other tool selections (e.g., show coming soon)
       alert(`${toolId.replace('-', ' ').toUpperCase()} Coming Soon!`);
       // Optionally reset selection or keep it selected
@@ -78,6 +88,7 @@ const DashboardPage = () => {
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.5 }}
                 >
+                    {/* ToolSelection will call handleToolSelected */}
                     <ToolSelection onSelectTool={handleToolSelected} />
                 </motion.div>
             )}
@@ -149,6 +160,8 @@ const DashboardPage = () => {
                  </motion.div>
             )}
         </AnimatePresence>
+        {/* The ResumeBuilder component itself will be rendered by App.jsx at the /resume-builder route,
+            so it doesn't need to be conditionally rendered here in the DashboardPage layout. */}
     </DashboardLayout>
   );
 };
