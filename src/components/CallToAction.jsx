@@ -31,14 +31,15 @@ const CallToAction = () => {
 
             {/* Optional: Product Preview Section */}
             <motion.div
-                className="mt-16 max-w-3xl mx-auto bg-brand-gray-extradark rounded-lg shadow-2xl p-4 border border-brand-gray-dark"
+                className="mt-16 max-w-3xl mx-auto bg-brand-gray-extradark rounded-lg shadow-2xl p-4"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: 0.2 }} // Slight delay
             >
                 <div className="aspect-video bg-brand-dark rounded flex items-center justify-center">
-                    <span className="text-brand-gray">Smart Resume Example Preview</span>
+                    <img src="/src/assets/image3.png" 
+                    className="relative z-10 max-w-[500px] mx-auto  h-auto rounded-lg object-cover"></img>
                 </div>
             </motion.div>
         </motion.div>
