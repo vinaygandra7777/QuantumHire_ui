@@ -36,7 +36,7 @@ const TrustedBy = () => {
                 Trusted by businesses of all sizes worldwide.
             </motion.p>
             <div className="overflow-hidden">
-                <div className="flex space-x-12 w-max animate-scroll-left"> {/* Added flex, space-x for gap, w-max, and animation class */}
+                <div className="flex space-x-12 w-max animate-scroll-left font-[Exo]"> {/* Added flex, space-x for gap, w-max, and animation class */}
                     {/* Map duplicated logos */}
                     {duplicatedLogos.map((logoName, index) => (
                         <LogoPlaceholder key={`${logoName}-${index}`} name={logoName} />

@@ -4,13 +4,13 @@ import { ChevronDown } from 'lucide-react'; // Using ChevronDown for expand/coll
 
 const FAQItem = ({ question, answer, isOpen, toggleOpen }) => {
   return (
-    <div className="border-b border-brand-gray-dark last:border-b-0">
+    <div className="border-b border-brand-gray-dark last:border-b-0 font-[Exo]">
       <button
         className="flex justify-between items-center w-full text-left py-4 focus:outline-none"
         onClick={toggleOpen}
         aria-expanded={isOpen}
       >
-        <span className="text-lg font-semibold text-white">{question}</span>
+        <span className="text-lg font-[Exo] text-white">{question}</span>
         <motion.div
           initial={false} // Don't animate on mount
           animate={{ rotate: isOpen ? 180 : 0 }}
@@ -108,9 +108,9 @@ const FAQ = () => {
          viewport={{ once: true, amount: 0.3 }}
          transition={{ duration: 0.7, ease: "easeOut" }}
       >
-        <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-10 text-center">Frequently asked questions</h2>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-10 text-center font-[Nura]">Frequently asked questions</h2>
 
-        <div className=" border-brand-gray-dark rounded-lg p-4"> {/* Container for FAQs */}
+        <div className=" border-brand-gray-dark rounded-lg p-4 font-[Exo]"> {/* Container for FAQs */}
           {faqs.map((faq, index) => (
             <FAQItem
               key={index}

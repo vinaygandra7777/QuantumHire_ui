@@ -11,10 +11,10 @@ const CallToAction = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
         >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-6  font-['Nura']">
                 Build Resumes That Land Jobs — Instantly
             </h2>
-            <p className="text-lg md:text-xl text-brand-gray max-w-2xl mx-auto mb-10">
+            <p className="text-lg md:text-xl text-brand-gray max-w-2xl mx-auto mb-10  font-['Exo']">
                 Join thousands of professionals using AI-powered tools to craft tailored, high-impact resumes in minutes.
                 Stand out, impress recruiters, and unlock more career opportunities effortlessly.
             </p>

@@ -1,5 +1,5 @@
 /* src/index.css */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tektur:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -20,51 +20,19 @@ body {
    position: relative;
    z-index: 1;
 }
-@font-face {
-  font-family: 'Nura'; /* You choose this name */
-  src: url('./assets/fonts/Nura-Regular.woff2') format('woff2'), /* Adjust filename and path */
-       url('./assets/fonts/Nura-Regular.woff') format('woff');   /* Adjust filename and path */
-       /* Add .ttf/.otf if needed, but woff2/woff are preferred for web */
-  font-weight: normal; /* Or the specific weight, e.g., 400 */
-  font-style: normal;
-  font-display: swap; /* Good practice: show fallback font while loading */
-}
 
-/* Add separate @font-face rules for other weights/styles if you have them */
-@font-face {
-  font-family: 'Nura';
-  src: url('./assets/fonts/Nura-Bold.woff2') format('woff2'), /* Example for Bold */
-       url('./assets/fonts/Nura-Bold.woff') format('woff');
-  font-weight: bold; /* Or 700 */
-  font-style: normal;
-  font-display: swap;
-}
 
-@font-face {
-  font-family: 'Nura';
-  src: url('./assets/fonts/Nura-ExtraBold.woff2') format('woff2'), /* Example for ExtraBold */
-       url('./assets/fonts/Nura-ExtraBold.woff') format('woff');
-  font-weight: 800; /* Match font's actual extra-bold weight */
-  font-style: normal;
-  font-display: swap;
-}
+
+
 @keyframes scroll-left {
   0% {
     transform: translateX(0); /* Start at the original position */
   }
   100% {
     transform: translateX(-50%); /* Move left by 50% of the container's width */
-    /* Translating by exactly -50% works when the content is duplicated exactly once,
-       making the end state match the start of the second set of logos. */
-  }
+   }
 }
 
-/* --- ADDED: Apply the Animation (using a custom class or Tailwind's arbitrary) --- */
-/* We used 'animate-scroll-left' class in TrustedBy.jsx */
-/* You can define this directly in your CSS */
 .animate-scroll-left {
-    animation: scroll-left 40s linear infinite; /* Adjust duration (40s) as needed */
-    /* animation-duration: 40s; /* Tailwind approach if using arbitrary values */
-    /* animation-timing-function: linear; */
-    /* animation-iteration-count: infinite; */
+    animation: scroll-left 40s linear infinite;
 }

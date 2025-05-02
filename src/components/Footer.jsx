@@ -22,7 +22,7 @@ const Footer = () => {
     QuantumHire <span className="text-white">AI</span>
   </span>
             </div>
-            <p className="text-brand-gray mb-6 max-w-xs">
+            <p className="text-brand-gray mb-6 max-w-xs font-[Exo]">
               Empowering you to craft resumes that get noticed. Build your career story with AI-driven precision.
             </p>
             <div className="flex space-x-4">
@@ -39,7 +39,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link}>
-                    <a href="#" className="text-brand-gray hover:text-white text-sm transition-colors relative">
+                    <a href="#" className="text-brand-gray hover:text-white text-sm transition-colors relative font-[Exo]">
                       {link}
                       {(link === 'Cover Letter Generator' || link === 'Career Dashboard') && (
                         <span className="absolute -top-1 -right-15 ml-1 text-xs bg-brand-purple text-white px-1.5 py-0.5 rounded-lg"> NEW</span>
@@ -53,7 +53,7 @@ const Footer = () => {
         </div>
 
         {/* Newsletter */}
-        <div className="border-t border-brand-gray-dark pt-8 mb-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="border-t border-brand-gray-dark pt-8 mb-8 flex flex-col md:flex-row justify-between items-center gap-6 font-[Exo]">
           <div>
             <h4 className="text-lg font-semibold text-white mb-1">Get Career Tips Weekly</h4>
             <p className="text-sm text-brand-gray">Insights, templates, and growth hacks delivered to your inbox.</p>
@@ -75,7 +75,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-brand-gray-dark pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-brand-gray">
+        <div className="border-t border-brand-gray-dark pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-brand-gray font-[Exo]">
           <p>© {new Date().getFullYear()} ResumeAI, Inc. All rights reserved.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

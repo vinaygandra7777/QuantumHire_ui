@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     // Navbar container: fixed top, full width, blur background, subtle bottom border
     // Using brand-card-dark for the background color as defined in your tailwind config
-    <nav className="fixed top-0 w-full z-50 bg-brand-card-dark bg-opacity-20 backdrop-blur-lg border-b border-brand-gray-dark">
+    <nav className="fixed top-0 w-full z-50 bg-brand-card-dark bg-opacity-20 backdrop-blur-lg border-brand-gray-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main flex container for logo, links, and buttons */}
         <div className="flex items-center justify-between h-16"> {/* h-16 matches the height from reflect.app */}
@@ -48,7 +48,7 @@ QuantumHire.<span className="text-white">AI</span>
                     href={link.href}
                     // Link styling: subtle gray default, white on hover, small padding
                     // Using text-white/60 for a less bright default state like reflect.app
-                    className="text-white/60 hover:text-white px-3 py-1 text-sm font-medium transition-colors"
+                    className="text-white/60 hover:text-white px-3 py-1 text-sm font-medium transition-colors  font-['Exo']"
                   >
                     {link.name}
                   </a>

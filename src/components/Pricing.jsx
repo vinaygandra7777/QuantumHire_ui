@@ -113,17 +113,17 @@ const Pricing = () => {
                     <span className="inline-block px-3 py-1 text-sm font-semibold text-brand-purple bg-brand-purple bg-opacity-10 rounded-full mb-2">
                         Pricing
                     </span>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4">
+                    <h2 className="text-3xl md:text-4xl lg:text-6xl  text-white mb-4 font-extrabold font-['Nura']">
                         Invest in Your Future Career
                     </h2>
-                    <p className="text-lg md:text-xl text-brand-gray max-w-3xl mx-auto">
+                    <p className="text-lg md:text-xl text-brand-gray max-w-3xl mx-auto font-[Exo]">
                         Whether you’re just starting out or leading a team, ResumeAI has a plan to help you stand out, land interviews, and grow your career faster.
                     </p>
                 </motion.div>
 
                 {/* Animate the grid with staggered children */}
                 <motion.div
-                    className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto"
+                    className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto font-[Exo]"
                     initial="hidden" // Initial state for children (uses cardVariants.hidden)
                     whileInView="visible" // Target state for children (uses cardVariants.visible)
                     viewport={{ once: true, amount: 0.1 }} // Trigger early when grid starts entering view

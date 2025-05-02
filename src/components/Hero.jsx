@@ -52,7 +52,7 @@ const Hero = () => {
             className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm transition-colors duration-200"
           >
             <Sparkles className="h-4 w-4 text-white/80 mr-2" />
-            <span className="text-white text-sm font-medium leading-none">
+            <span className="text-white text-sm font-medium leading-none font-['Exo']">
               More than a resume builder
             </span>
           </a>
@@ -69,7 +69,7 @@ const Hero = () => {
         {/* Paragraph */}
         <motion.p
           variants={itemVariants}
-          className="text-lg md:text-xl text-brand-gray max-w-3xl mx-auto mb-10 "
+          className="text-lg md:text-xl lg:text-2xl text-brand-gray max-w-3xl mx-auto mb-10 font-[Exo] "
         >
           QuantumHire helps you create professional, tailored resumes effortlessly using advanced AI — so you can focus on your career, not formatting
         </motion.p>

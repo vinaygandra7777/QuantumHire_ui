@@ -77,17 +77,20 @@ const Features = () => {
                 <span className="inline-block px-3 py-1 text-sm font-semibold text-brand-purple bg-brand-purple bg-opacity-10 rounded-full mb-2">
                     Features
                 </span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4">
-                    Elevate Your Hiring & Job Search <br /> with AI Precision
+                <h2 >
+                <span className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">
+                Elevate Your Hiring & Job Search <br /> with AI Precision
+</span>
                 </h2>
-                <p className="text-lg md:text-xl text-brand-gray max-w-3xl mx-auto ">
+                
+                <p className="text-lg md:text-xl text-brand-gray max-w-3xl mx-auto font-extrabold font-[Exo] mt-4 ">
                     Leverage cutting-edge AI to analyze, build, and optimize resumes, ensuring you find the perfect fit or land your dream job faster.
                 </p>
             </motion.div>
 
             {/* Grid with Staggered Card Animation */}
             <motion.div
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 font-[Exo]"
                 initial="hidden"
                 whileInView="visible" // Trigger when grid comes into view
                 viewport={{ once: true, amount: 0.1 }} // Trigger early
