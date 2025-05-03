@@ -11,6 +11,8 @@ import Pricing from './components/Pricing';
 import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
 import FAQ from './components/FAQ';
+import ResumeTemplateSelectionPage from './pages/ResumeTemplateSelectionPage'
+import ResumeBuilderTemplate2 from './pages/ResumeBuilderTemplate2'
 
 // Import Dashboard Page
 import DashboardPage from './pages/DashboardPage';
@@ -83,7 +85,9 @@ function App() {
 
         {/* Route for the Resume Builder Page */}
         {/* --- ADD THIS ROUTE --- */}
+        <Route path ="/ResumeTemplateSelectionPage" element={<ResumeTemplateSelectionPage />} />
         <Route path="/resume-builder" element={<ResumeBuilder />} />
+        <Route path="/ResumeBuilderTemplate2" element={<ResumeBuilderTemplate2 />}/>
 
         {/* Add other routes like Login, Signup, etc. */}
       </Routes>

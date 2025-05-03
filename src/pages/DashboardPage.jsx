@@ -28,7 +28,7 @@ const DashboardPage = () => {
       // Optionally reset ATS states here if needed on entry, but upload handles reset
     } else if (toolId === 'resume-builder') { // --- CHECK FOR RESUME BUILDER ---
       // Navigate to the Resume Builder page
-      navigate('/resume-builder'); // --- NAVIGATE TO THE NEW ROUTE ---
+      navigate('/resumeTemplateSelectionPage'); // --- NAVIGATE TO THE NEW ROUTE ---
     }
     else {
       // Handle other tool selections (e.g., show coming soon)
