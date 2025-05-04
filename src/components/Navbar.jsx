@@ -9,9 +9,9 @@ const Navbar = () => {
 
   // Adjusted links based on your existing structure
   const navLinks = [
-    { name: 'Features', href: '#features' }, 
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'FAQ', href: '#faq' }, // Link to the new FAQ section
+    { name: 'Features', href: '/Features' }, 
+    { name: 'Pricing', href: '/Pricing' },
+    { name: 'FAQ', href: '/FAQ' }, // Link to the new FAQ section
     
     { name: 'Company', href: '#company' }, // Placeholder link
   ];
@@ -26,11 +26,12 @@ const Navbar = () => {
 
           {/* Left Section: Logo */}
           <div className="flex-shrink-0 flex items-center">
-            {/* Logo Link */}
+           
             <a href="/" className="flex items-center">
-              <div className="h-8 w-8 bg-brand-purple rounded-md flex items-center justify-center mr-2">
-                 
-              </div>
+               
+              {/* <div className="h-8 w-8 bg-brand-purple rounded-md flex items-center justify-center mr-2"> */}
+              <img src="/src/assets/qhlogo.png" alt="Logo" className="h-8 w-8 mr-2 rounded-lg" /> {/* Logo image */}
+              {/* </div> */}
               <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">
 QuantumHire.<span className="text-white">AI</span>
 </span>
