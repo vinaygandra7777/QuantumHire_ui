@@ -15,7 +15,7 @@ const cardVariants = {
 // Card component with motion and hover effect
 const FeatureCard = ({ icon: Icon, title, description }) => (
     <motion.div
-        className="bg-brand-gray-extradark p-6 rounded-lg border border-brand-gray-dark transition-colors duration-300 hover:border-brand-purple-light hover:shadow-lg"
+        className="bg-brand-gray-extradark p-6 rounded-lg border border-brand-gray-dark transition-colors duration-300 hover:border-brand-purple-light hover:shadow-lg cursor-pointer"
         variants={cardVariants} // Use variants defined above
         whileHover={{ scale: 1.03, transition: { duration: 0.2 } }} // Subtle hover scale
     >
@@ -83,7 +83,7 @@ const Features = () => {
 </span>
                 </h2>
                 
-                <p className="text-lg md:text-xl text-brand-gray max-w-3xl mx-auto font-extrabold font-[Exo] mt-4 ">
+                <p className="text-md md:text-lg text-brand-gray max-w-3xl mx-auto font-extrabold font-[Exo] mt-4 ">
                     Leverage cutting-edge AI to analyze, build, and optimize resumes, ensuring you find the perfect fit or land your dream job faster.
                 </p>
             </motion.div>

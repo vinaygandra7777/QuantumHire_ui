@@ -81,7 +81,7 @@ const Hero = () => {
         >
           <motion.a
             href="/dashboard" // Replace with actual link if needed
-            className="bg-brand-purple hover:bg-brand-purple-light text-white px-8 py-3 rounded-md text-lg font-semibold transition-colors w-full sm:w-auto block" // Added block for motion layout
+            className="bg-brand-purple hover:bg-brand-purple-light text-white px-8 py-3 rounded-md text-lg font-semibold transition-colors w-full sm:w-auto block " // Added block for motion layout
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

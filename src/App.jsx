@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Rellax from 'rellax';
-
-// Import Landing Page Components
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TrustedBy from './components/TrustedBy';
@@ -13,13 +11,8 @@ import Footer from './components/Footer';
 import FAQ from './components/FAQ';
 import ResumeTemplateSelectionPage from './pages/ResumeTemplateSelectionPage'
 import ResumeBuilderTemplate2 from './pages/ResumeBuilderTemplate2'
-
-// Import Dashboard Page
 import DashboardPage from './pages/DashboardPage';
-// Import ResumeBuilder Page
 import ResumeBuilder from './pages/ResumeBuilder'; // <--- Import ResumeBuilder
-
-// Optional: Create a component for the landing page layout
 const LandingPageLayout = () => {
   // --- MODIFIED: useEffect to safely initialize and clean up Rellax ---
   useEffect(() => {
@@ -64,7 +57,7 @@ const LandingPageLayout = () => {
         <Hero />
         <TrustedBy />
         <Features />
-        <Pricing />
+        {/* <Pricing /> */}
         <CallToAction />
         <FAQ />
       </main>
@@ -79,12 +72,7 @@ function App() {
       <Routes>
         {/* Route for the Landing Page */}
         <Route path="/" element={<LandingPageLayout />} />
-
-        {/* Route for the Dashboard */}
         <Route path="/dashboard" element={<DashboardPage />} />
-
-        {/* Route for the Resume Builder Page */}
-        {/* --- ADD THIS ROUTE --- */}
         <Route path ="/ResumeTemplateSelectionPage" element={<ResumeTemplateSelectionPage />} />
         <Route path="/resume-builder" element={<ResumeBuilder />} />
         <Route path="/ResumeBuilderTemplate2" element={<ResumeBuilderTemplate2 />}/>
