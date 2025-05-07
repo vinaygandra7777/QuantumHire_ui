@@ -88,11 +88,11 @@ const ToolSelection = ({ onSelectTool }) => {
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col items-center">
-        <h2 className="text-3xl md:text-4xl  text-white mb-4 text-center font-extrabold font-['Nura']">
-          Choose Your Tool
+        <h2 className="text-xl md:text-4xl  text-white mb-4 text-center font-['exo'] uppercase">
+        <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">Choose Your Tool</span>
         </h2>
         {/* Keeping mb-10 as in your provided code */}
-        <p className="font-extrabold font-['Nura'] text-brand-gray mb-10 text-center max-w-md">
+        <p className="font-[Exo]   text-md mb-10 text-center max-w-md">
           Select the tool you want to use to optimize your career documents. We're constantly adding more!
         </p>
 

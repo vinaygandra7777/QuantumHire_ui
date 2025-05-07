@@ -20,7 +20,7 @@ const CallToAction = () => {
             </p>
             <div className="flex flex-col md:flex-row justify-center items-center gap-6">
                 <motion.a
-                    href="#"
+                    href="/dashboard"
                     className="bg-brand-purple hover:bg-brand-purple-light text-white px-8 py-3 rounded-md text-lg font-semibold transition-colors inline-block"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}

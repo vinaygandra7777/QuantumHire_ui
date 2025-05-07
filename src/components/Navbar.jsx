@@ -5,7 +5,7 @@ import { Menu, X } from 'lucide-react';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navLinks = [
-    { name: 'Features', href: '/Features' }, 
+    { name: 'Features', href: '' }, 
     { name: 'Pricing', href: '/Pricing' },
     { name: 'FAQ', href: '/FAQ' }, // Link to the new FAQ section
     
