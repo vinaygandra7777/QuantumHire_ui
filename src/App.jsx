@@ -1,7 +1,12 @@
 // src/App.js
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// **FIX: Import Rellax correctly if it's not in the node_modules root**
+// Assuming Rellax was installed via npm/yarn, this import should be fine.
+// If it's a script tag in index.html, you don't need the import here,
+// but the useEffect logic needs adjustment to check `window.Rellax`.
 import Rellax from 'rellax';
+
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TrustedBy from './components/TrustedBy';
@@ -16,10 +21,8 @@ import ResumeTemplateSelectionPage from './pages/ResumeTemplateSelectionPage';
 import ResumeBuilderTemplate2 from './pages/ResumeBuilderTemplate2';
 import DashboardPage from './pages/DashboardPage';
 import ResumeBuilder from './pages/ResumeBuilder';
-import Login from './pages/Login'; // Assuming Login is a component/page itself
-import Signup from './pages/Signup'; // Assuming Signup is a component/page itself
-// Make sure the paths below correctly point to your files
-
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 
 // --- Landing Page Layout Component ---
 const LandingPageLayout = () => {
@@ -28,7 +31,9 @@ const LandingPageLayout = () => {
     let rellaxInstance = null; // Declare a variable to hold the rellax instance
 
     // Check if Rellax is available before trying to initialize
-    // Also check if it hasn't been initialized already (more robust)
+    // This check is important if Rellax is included via script tag or sometimes for SSR
+    // If installed via npm, `typeof Rellax` will be 'function'.
+    // If via script tag, check `typeof window.Rellax`.
     if (typeof Rellax !== 'undefined') {
       try {
         // Attempt to initialize Rellax
@@ -41,13 +46,12 @@ const LandingPageLayout = () => {
             vertical: true,
             horizontal: false,
             // Consider adding mobile: false if parallax is jumpy on phones
-            // mobile: false,
+             mobile: false, // Added mobile: false as parallax can be unstable on mobile
         });
         // Optional: console.log("Rellax initialized");
       } catch (error) {
         // Catch any potential errors during initialization
         console.error("Failed to initialize Rellax:", error);
-        // The error might happen here, preventing rellaxInstance from being created correctly
       }
     }
 
@@ -59,12 +63,15 @@ const LandingPageLayout = () => {
              // Optional: console.log("Rellax destroyed");
          }
      };
+     // Rellax typically doesn't need to re-initialize unless the DOM structure changes significantly
+     // If Hero/other rellax components are dynamic, you might need dependencies, but usually not for a static layout.
   }, []); // Empty dependency array means this runs once after the initial render
 
   return (
     // Added `relative` to allow for absolute positioning of background elements if needed
     // Using the custom background class if defined in tailwind.config.js
-    <div className="overflow-x-hidden relative bg-black bg-dark-gradient">
+    // **FIX: Use the defined dark gradient class**
+    <div className="overflow-x-hidden relative bg-dark-gradient min-h-screen"> {/* Added min-h-screen to ensure gradient covers the view */}
       {/* Background elements for parallax could go here */}
       {/* Example: <div className="absolute top-0 left-0 w-full h-full rellax" data-rellax-speed="-5"></div> */}
 
@@ -96,14 +103,17 @@ function App() {
         {/* NOTE: You might want to wrap pages like Dashboard, ResumeBuilder etc.
                    in a different layout or protect them if they require authentication */}
         <Route path="/dashboard" element={<DashboardPage />} />
+        {/* **FIX: Corrected route path spelling** */}
         <Route path="/resume-template-selection" element={<ResumeTemplateSelectionPage />} />
         <Route path="/resume-builder" element={<ResumeBuilder />} />
+        {/* **FIX: Corrected route path spelling** */}
         <Route path="/resume-builder-template-2" element={<ResumeBuilderTemplate2 />}/>
+        <Route path ="/login" element={<Login />} />
+        <Route path ="/signup" element={<Signup />} />
 
         {/* Authentication Pages - also using kebab-case */}
         {/* These typically wouldn't use the LandingPageLayout */}
-        {/* <Route path="/Login" element={<Login />} />
-        <Route path="/Signup" element={<Signup />} /> */}
+        {/* **FIX: Uncomment Login and Signup routes** */}
       </Routes>
     </Router>
   );

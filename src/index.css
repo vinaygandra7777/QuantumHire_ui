@@ -1,35 +1,71 @@
 /* src/index.css */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tektur:wght@400;500;600;700;800&display=swap');
+/* Ensure all necessary fonts are imported */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Exo:wght@400;500;600;700;800&family=Nura:wght@700;800;900&family=Tektur:wght@400..900&display=swap');
+
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* --- FIX: Basic CSS reset for body and html --- */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure html and body take full height */
+    overflow-x: hidden; /* Prevent horizontal scroll issues */
+}
+
 body {
-  /* @apply bg-brand-dark text-brand-gray-light font-sans antialiased; */
+  /* --- FIX: Apply the base dark background to the body --- */
+  /* This ensures a dark screen even if JS fails or before React renders */
   @apply bg-brand-black text-brand-gray-light font-sans antialiased;
-  /* Add the background pattern */
-  background-image: url('/path/to/your/pattern.svg'); /* Adjust path */
+  /* background-image: url('/path/to/your/pattern.svg'); /* Adjust path if pattern exists */
   background-repeat: repeat;
-  /* Optional: Adjust size if needed */
-  /* background-size: 50px 50px; */
 }
 
-/* Ensure content is visually above the pattern if needed, though usually not necessary */
-#root > div { /* Target the main App container */
-   position: relative;
-   z-index: 1;
+/* --- FIX: Apply necessary styles to the root div --- */
+#root {
+    /* Remove the max-width, padding, and text-align from App.css for #root */
+    /* Let the layout components handle structure and alignment */
+    /* Ensure root takes full height */
+    height: 100%;
+    position: relative; /* Needed for z-index to work relative to body background */
+    z-index: 1; /* Ensure content is above potential body background layers */
+    /* Remove default browser padding/margin */
+    margin: 0;
+    padding: 0;
 }
 
 
+/* Added simple custom scrollbar styling for dark theme */
+.custom-scrollbar {
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: #4c1d95 #1A1A1A; /* thumb and track color */
+}
+
+/* For Chrome, Edge, and Safari */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #1A1A1A; /* brand-card-dark */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #6d28d9; /* brand-purple */
+  border-radius: 10px;
+  border: 2px solid #1A1A1A; /* space around thumb */
+}
 
 
 @keyframes scroll-left {
   0% {
-    transform: translateX(0); /* Start at the original position */
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%); /* Move left by 50% of the container's width */
+    transform: translateX(-50%);
    }
 }
 

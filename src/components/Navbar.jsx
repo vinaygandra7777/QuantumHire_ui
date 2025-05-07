@@ -48,7 +48,7 @@ QuantumHire.<span className="text-white">AI</span>
           </div>
           <div className="hidden md:flex items-center flex-shrink-0"> {/* Added items-center to align vertically */}
              {/* Login Button (Text Link) - Subtle, spaced from next button */}
-             <a href="/" className="text-white/60 hover:text-white px-3 py-2 text-sm font-medium transition-colors mr-2"> {/* Adjusted text color and spacing */}
+             <a href="/login" className="text-white/60 hover:text-white px-3 py-2 text-sm font-medium transition-colors mr-2"> {/* Adjusted text color and spacing */}
                Login
              </a>
 
