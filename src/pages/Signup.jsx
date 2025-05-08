@@ -147,7 +147,7 @@ const Signup = () => {
            const user = result.user;
            console.log("Google signup successful:", user);
            // Redirect to dashboard after success
-           navigate('/dashboard');
+           navigate('/login');
 
        } catch (error) {
            console.error("Error during Google signup:", error);
@@ -176,7 +176,7 @@ const Signup = () => {
      <div className="flex flex-col md:flex-row min-h-screen bg-dark-gradient">
 
         {/* Left Side - Animation Background */}
-        <div className="relative w-full md:w-1/2 lg:w-1/2 bg-brand-dark flex items-center justify-center p-8 overflow-hidden">
+        <div className="relative w-full md:w-1/2 lg:w-1/2 bg-brand-dark flex items-center justify-center p-8 overflow-hidden background-image bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/src/assets/background1.png')" }}>
              {/* Floating Shapes (Animation background) */}
              <div className="absolute inset-0 z-0 pointer-events-none">
                  {shapes.map((shape) => (
@@ -210,7 +210,7 @@ const Signup = () => {
                     {/* Back Button */}
                     <Link
                         to="/" // Link back to the landing page
-                        className="flex items-center px-4 py-2 bg-brand-purple/20 text-brand-purple-light rounded-full text-sm font-semibold hover:bg-brand-purple/30 transition-colors font-['Exo']"
+                        className="flex items-center px-4 py-2 bg-brand-purple/20 rounded-full text-sm font-semibold hover:bg-brand-purple/30 transition-colors font-['Exo']"
                     >
                        Back to website <span className="ml-1 ">→</span> {/* Adjusted margin */}
                     </Link>
@@ -232,7 +232,7 @@ const Signup = () => {
         {/* Right Side - Signup Form */}
         {/* Use motion.div for entry animation */}
         <motion.div
-             className="w-full md:w-1/2 lg:w-3/5 bg-brand-card-dark bg-opacity-90 p-8 md:p-12 flex items-center justify-center"
+             className="w-full md:w-1/2 lg:w-3/5 bg-black bg-opacity-90 p-8 md:p-12 flex items-center justify-center"
              initial={{ opacity: 0, x: 50 }}
              animate={{ opacity: 1, x: 0 }}
              transition={{ duration: 0.7, ease: "easeOut" }}
@@ -379,7 +379,7 @@ const Signup = () => {
                     {/* Success Message */}
                      {success && (
                         <div className="text-green-500 text-sm text-center font-['Exo']">
-                            Account created successfully! Redirecting to dashboard...
+                            Account created successfully!
                         </div>
                     )}
 
@@ -403,7 +403,7 @@ const Signup = () => {
 
                 {/* Separator */}
                 <div className="relative flex justify-center text-sm">
-                     <span className="bg-brand-card-dark bg-opacity-90 px-2 text-brand-gray font-['Exo']">
+                     <span className="bg-opacity-90 px-2 text-brand-gray font-['Exo']">
                        Or register with
                      </span>
                      {/* Use absolute positioning for the line */}

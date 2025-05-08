@@ -24,7 +24,7 @@ const itemVariants = {
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden pt-28 pb-20 md:pt-40 md:pb-32 px-4">
+    <section className="relative overflow-hidden pt-28 pb-20 md:pt-40 md:pb-32 px-4 background-image bg-cover  bg-no-repeat" style={{ backgroundImage: "url('/src/assets/background1.png')" }}>
       
       {/* Background Glows (remain static or add subtle pulse if desired) */}
       <div
@@ -95,7 +95,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }} // Delay after text/buttons
-          className="relative max-w-3xl mx-auto bg-brand-gray-extradark rounded-lg shadow-2xl p-4 border border-brand-gray-dark rellax"
+          className="relative max-w-3xl mx-auto bg-brand-black-extradark rounded-lg shadow-2xl p-4 border border-brand-gray-dark rellax"
           data-rellax-speed="-2"
         >
           {/* Keep the gradient background effect */}

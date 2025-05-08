@@ -15,7 +15,7 @@ const cardVariants = {
 // Card component with motion and hover effect
 const FeatureCard = ({ icon: Icon, title, description }) => (
     <motion.div
-        className="bg-brand-gray-extradark p-6 rounded-lg border border-brand-gray-dark transition-colors duration-300 hover:border-brand-purple-light hover:shadow-lg cursor-pointer"
+        className="bg-brand-black extradark p-6 rounded-lg border border-brand-gray-dark transition-colors duration-300 hover:border-brand-purple-light hover:shadow-lg cursor-pointer"
         variants={cardVariants} // Use variants defined above
         whileHover={{ scale: 1.03, transition: { duration: 0.2 } }} // Subtle hover scale
     >

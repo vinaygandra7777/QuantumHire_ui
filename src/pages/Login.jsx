@@ -126,7 +126,7 @@ const Login = () => {
      
      <div className="flex flex-col md:flex-row min-h-screen bg-dark-gradient">
 
-        <div className="relative w-full md:w-1/2 lg:w-1/2 bg-brand-dark flex items-center justify-center p-8 overflow-hidden">
+        <div className="relative w-full md:w-1/2 lg:w-1/2 bg-brand-dark flex items-center justify-center p-8 overflow-hidden background-image bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/src/assets/background1.png')" }}>
                      {/* Floating Shapes (Animation background) */}
                      <div className="absolute inset-0 z-0 pointer-events-none">
                          {shapes.map((shape) => (
@@ -150,7 +150,7 @@ const Login = () => {
                     {/* Left Side Content (Logo, Back button, Marketing text) */}
                     <div className="relative z-10 text-white text-center flex flex-col items-center h-full w-full justify-between py-8"> {/* Added flex column, justify-between, height, width */}
                         {/* Logo and Back Button (Top) */}
-                        <div className="flex justify-between items-center w-full">
+                        <div className="flex justify-between items-center w-full ">
                              <div className="flex items-center">
                                 {/* Using a generic placeholder for logo, replace with your actual logo */}
                                 <img src="/src/assets/qhlogo.png" alt="QuantumHire AI Logo" className="h-8 w-8 mr- rounded-lg" />
@@ -160,7 +160,7 @@ const Login = () => {
                             {/* Back Button */}
                             <Link
                                 to="/" // Link back to the landing page
-                                className="flex items-center px-4 py-2 bg-brand-purple/20 text-brand-purple-light rounded-full text-sm font-semibold hover:bg-brand-purple/30 transition-colors font-['Exo']"
+                                className="flex items-center px-4 py-2 bg-brand-purple/20 rounded-full text-sm font-semibold hover:bg-brand-purple/30 transition-colors font-['Exo']"
                             >
                                Back to website <span className="ml-1 ">→</span> {/* Adjusted margin */}
                             </Link>
@@ -180,7 +180,7 @@ const Login = () => {
         {/* Right Side - Login Form */}
         {/* Use motion.div for entry animation */}
         <motion.div
-             className="w-full md:w-1/2 lg:w-3/5 bg-brand-card-dark bg-opacity-90 p-8 md:p-12 flex items-center justify-center"
+             className="w-full md:w-1/2 lg:w-3/5 bg-black bg-opacity-90 p-8 md:p-12 flex items-center justify-center"
              initial={{ opacity: 0, x: 50 }}
              animate={{ opacity: 1, x: 0 }}
              transition={{ duration: 0.7, ease: "easeOut" }}
@@ -285,7 +285,7 @@ const Login = () => {
 
                 {/* Separator */}
                 <div className="relative flex justify-center text-sm">
-                     <span className="bg-brand-card-dark bg-opacity-90 px-2 text-brand-gray font-['Exo']">
+                     <span className=" bg-opacity-90 px-2 text-brand-gray font-['Exo']">
                        Or login with
                      </span>
                      {/* Use absolute positioning for the line */}

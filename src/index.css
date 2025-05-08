@@ -1,5 +1,5 @@
 /* src/index.css */
-/* Ensure all necessary fonts are imported */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Exo:wght@400;500;600;700;800&family=Nura:wght@700;800;900&family=Tektur:wght@400..900&display=swap');
 
 
@@ -8,33 +8,18 @@
 @tailwind utilities;
 
 /* --- FIX: Basic CSS reset for body and html --- */
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%; /* Ensure html and body take full height */
-    overflow-x: hidden; /* Prevent horizontal scroll issues */
-}
-
 body {
-  /* --- FIX: Apply the base dark background to the body --- */
-  /* This ensures a dark screen even if JS fails or before React renders */
+  /* @apply bg-brand-dark text-brand-gray-light font-sans antialiased; */
   @apply bg-brand-black text-brand-gray-light font-sans antialiased;
-  /* background-image: url('/path/to/your/pattern.svg'); /* Adjust path if pattern exists */
-  background-repeat: repeat;
+  /* Add the background pattern */
+  background-image: url('./assets/background1.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%; 
+  /* Optional: Adjust size if needed */
+  /* background-size: 50px 50px; */
 }
 
 /* --- FIX: Apply necessary styles to the root div --- */
-#root {
-    /* Remove the max-width, padding, and text-align from App.css for #root */
-    /* Let the layout components handle structure and alignment */
-    /* Ensure root takes full height */
-    height: 100%;
-    position: relative; /* Needed for z-index to work relative to body background */
-    z-index: 1; /* Ensure content is above potential body background layers */
-    /* Remove default browser padding/margin */
-    margin: 0;
-    padding: 0;
-}
 
 
 /* Added simple custom scrollbar styling for dark theme */
