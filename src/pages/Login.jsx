@@ -169,9 +169,10 @@ const Login = () => {
 
                 {/* Placeholder for Resume ATS Score Animation */}
                  {/* Use a relevant image or animation placeholder */}
-                <div className="w-full flex flex-col items-center md:items-start">
+                 <div className="flex flex-col items-center text-center text-white"> {/* Added margin bottom */}
                      
-                    
+                    <span className="text-5xl text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600 font-extrabold font-['Nura']"><h1>Optimize. Apply. Succeed.</h1></span>
+                     
                 </div>
 
             </div>

@@ -1,5 +1,5 @@
 // src/firebase.js
-// Firebase App (the core library) is always required and must be listed first
+
 import { initializeApp } from 'firebase/app';
 
 // Add Firebase products that you want to use
@@ -8,9 +8,6 @@ import { getAuth } from 'firebase/auth';
 // import { getFirestore } from 'firebase/firestore'; // Uncomment if using Firestore
 // import { getStorage } from 'firebase/storage'; // Uncomment if using Storage
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-// --- FIX: Use VITE_ prefix for Vite environment variables ---
 const firebaseConfig = {
   apiKey:  import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain:  import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,

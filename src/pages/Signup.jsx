@@ -113,7 +113,7 @@ const Signup = () => {
       setSuccess(true);
       console.log('User signed up successfully!');
       // Optional: Redirect after a short delay
-       setTimeout(() => navigate('/dashboard'), 2000); // Redirect to dashboard after success
+       setTimeout(() => navigate('/login'), 2000); // Redirect to dashboard after success
     } catch (error) {
       console.error('Error signing up:', error);
       // Display user-friendly error message
@@ -147,7 +147,7 @@ const Signup = () => {
            const user = result.user;
            console.log("Google signup successful:", user);
            // Redirect to dashboard after success
-           navigate('/login');
+           navigate('/dashboard');
 
        } catch (error) {
            console.error("Error during Google signup:", error);
@@ -218,9 +218,9 @@ const Signup = () => {
 
                 {/* Marketing Text (Middle/Bottom area) */}
                 {/* Removed placeholder image */}
-                <div className="flex flex-col items-center text-center text-white mb-12"> {/* Added margin bottom */}
+                <div className="flex flex-col items-center text-center text-white"> {/* Added margin bottom */}
                      
-                     {/* Small dots/lines at the bottom */}
+                    <span className="text-6xl text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600 font-extrabold font-['Nura']"><h1>Smarter Resumes for Smarter Job Search.</h1></span>
                      
                 </div>
                  {/* This empty div pushes the content to justify-between */}
