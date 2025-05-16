@@ -24,7 +24,7 @@ const itemVariants = {
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden pt-28 pb-20 md:pt-40 md:pb-32 px-4 background-image bg-cover  bg-no-repeat" style={{ backgroundImage: "url('/src/assets/background.png')" }}>
+    <section className="relative overflow-hidden pt-28 pb-20 md:pt-40 md:pb-32 px-4 background-image bg-cover  bg-no-repeat" style={{ backgroundImage: "url('/src/assets/background4.png')" }}>
       
       {/* Background Glows (remain static or add subtle pulse if desired) */}
       {/* <div
