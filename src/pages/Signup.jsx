@@ -417,7 +417,7 @@ const Signup = () => {
                      <button
                          type="button" // Important: Type button
                          onClick={handleGoogleSignup}
-                         className="w-full flex items-center justify-center px-4 py-2 border border-brand-gray-dark rounded-md shadow-sm text-sm font-medium text-white bg-brand-black hover:bg-brand-gray-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-gray-dark font-['Exo']"
+                         className="w-full flex items-center justify-center px-4 py-2 border border-brand-gray-dark rounded-md shadow-sm text-sm font-medium text-white bg-brand-black hover:bg-brand-purple focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-gray-dark font-['Exo']"
                          disabled={loading} // Disable social login while loading
                      >
                          {/* Google Icon (replace with SVG or icon component) */}

@@ -30,10 +30,7 @@ const LandingPageLayout = () => {
   useEffect(() => {
     let rellaxInstance = null; // Declare a variable to hold the rellax instance
 
-    // Check if Rellax is available before trying to initialize
-    // This check is important if Rellax is included via script tag or sometimes for SSR
-    // If installed via npm, `typeof Rellax` will be 'function'.
-    // If via script tag, check `typeof window.Rellax`.
+    
     if (typeof Rellax !== 'undefined') {
       try {
         // Attempt to initialize Rellax
@@ -63,14 +60,11 @@ const LandingPageLayout = () => {
              // Optional: console.log("Rellax destroyed");
          }
      };
-     // Rellax typically doesn't need to re-initialize unless the DOM structure changes significantly
-     // If Hero/other rellax components are dynamic, you might need dependencies, but usually not for a static layout.
+
   }, []); // Empty dependency array means this runs once after the initial render
 
   return (
-    // Added `relative` to allow for absolute positioning of background elements if needed
-    // Using the custom background class if defined in tailwind.config.js
-    // **FIX: Use the defined dark gradient class**
+  
     <div className="overflow-x-hidden relative bg-dark-gradient min-h-screen"> {/* Added min-h-screen to ensure gradient covers the view */}
       {/* Background elements for parallax could go here */}
       {/* Example: <div className="absolute top-0 left-0 w-full h-full rellax" data-rellax-speed="-5"></div> */}
