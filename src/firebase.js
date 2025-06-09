@@ -1,9 +1,6 @@
 // src/firebase.js
 
 import { initializeApp } from 'firebase/app';
-
-// Add Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 import { getAuth } from 'firebase/auth';
 // import { getFirestore } from 'firebase/firestore'; // Uncomment if using Firestore
 // import { getStorage } from 'firebase/storage'; // Uncomment if using Storage

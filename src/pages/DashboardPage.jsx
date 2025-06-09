@@ -10,15 +10,12 @@ import { useNavigate } from 'react-router-dom';
 
 
 const DashboardPage = () => {
-  // State to control which part of the dashboard is shown
   const [currentView, setCurrentView] = useState('selection'); // 'selection' or 'ats-analysis'
 
   // States for ATS Analysis (keep these for the ATS view)
   const [atsScore, setAtsScore] = useState(null);
   const [analysisFeedback, setAnalysisFeedback] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-
-  // --- INITIALIZE useNavigate ---
   const navigate = useNavigate();
 
   // Function called by ToolSelection when a tool is chosen
@@ -28,13 +25,11 @@ const DashboardPage = () => {
       // Optionally reset ATS states here if needed on entry, but upload handles reset
     } else if (toolId === 'resume-builder') { // --- CHECK FOR RESUME BUILDER ---
       // Navigate to the Resume Builder page
-      navigate('/ResumeTemplateSelectionPage'); // --- NAVIGATE TO THE NEW ROUTE ---
+      navigate('/resume-template-selection'); // --- NAVIGATE TO THE NEW ROUTE ---
     }
     else {
       // Handle other tool selections (e.g., show coming soon)
       alert(`${toolId.replace('-', ' ').toUpperCase()} Coming Soon!`);
-      // Optionally reset selection or keep it selected
-      // setCurrentView('selection'); // Could go back to selection, or stay on selection with message
     }
   };
 

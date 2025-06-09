@@ -1,22 +1,15 @@
 // src/App.js
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// **FIX: Import Rellax correctly if it's not in the node_modules root**
-// Assuming Rellax was installed via npm/yarn, this import should be fine.
-// If it's a script tag in index.html, you don't need the import here,
-// but the useEffect logic needs adjustment to check `window.Rellax`.
 import Rellax from 'rellax';
 
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TrustedBy from './components/TrustedBy';
 import Features from './components/Features';
-// import Pricing from './components/Pricing'; // Keep commented out if not used in LandingPageLayout
 import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
 import FAQ from './components/FAQ';
-
-// --- Import Your Page/Component Files ---
 import ResumeTemplateSelectionPage from './pages/ResumeTemplateSelectionPage';
 import ResumeBuilderTemplate2 from './pages/ResumeBuilderTemplate2';
 import DashboardPage from './pages/DashboardPage';
@@ -33,8 +26,7 @@ const LandingPageLayout = () => {
     
     if (typeof Rellax !== 'undefined') {
       try {
-        // Attempt to initialize Rellax
-        // Ensure elements with class 'rellax' exist on the page rendered by this component
+        
         rellaxInstance = new Rellax('.rellax', {
             speed: -2, // Default speed for all rellax elements
             center: false,
@@ -65,10 +57,7 @@ const LandingPageLayout = () => {
 
   return (
   
-    <div className="overflow-x-hidden relative bg-dark-gradient min-h-screen"> {/* Added min-h-screen to ensure gradient covers the view */}
-      {/* Background elements for parallax could go here */}
-      {/* Example: <div className="absolute top-0 left-0 w-full h-full rellax" data-rellax-speed="-5"></div> */}
-
+    <div className="overflow-x-hidden relative bg-dark-gradient min-h-screen">
       <Navbar />
       <main>
         {/* Ensure components like Hero or others contain elements with class="rellax" */}
@@ -84,18 +73,12 @@ const LandingPageLayout = () => {
   );
 };
 
-
-// --- Main App Component with Routing ---
 function App() {
   return (
     <Router>
       <Routes>
         {/* Route for the Landing Page using the Layout */}
         <Route path="/" element={<LandingPageLayout />} />
-
-        {/* Routes for other specific pages using kebab-case for paths */}
-        {/* NOTE: You might want to wrap pages like Dashboard, ResumeBuilder etc.
-                   in a different layout or protect them if they require authentication */}
         <Route path="/dashboard" element={<DashboardPage />} />
         {/* **FIX: Corrected route path spelling** */}
         <Route path="/resume-template-selection" element={<ResumeTemplateSelectionPage />} />
@@ -105,9 +88,6 @@ function App() {
         <Route path ="/login" element={<Login />} />
         <Route path ="/signup" element={<Signup />} />
 
-        {/* Authentication Pages - also using kebab-case */}
-        {/* These typically wouldn't use the LandingPageLayout */}
-        {/* **FIX: Uncomment Login and Signup routes** */}
       </Routes>
     </Router>
   );

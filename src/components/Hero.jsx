@@ -25,20 +25,7 @@ const itemVariants = {
 const Hero = () => {
   return (
     <section className="relative overflow-hidden pt-28 pb-20 md:pt-40 md:pb-32 px-4 background-image bg-cover  bg-no-repeat" style={{ backgroundImage: "url('/src/assets/background4.png')" }}>
-      
-      {/* Background Glows (remain static or add subtle pulse if desired) */}
-      {/* <div
-        className="absolute top-[-50px] left-[10%] w-[500px] h-[500px] bg-brand-purple rounded-full opacity-15 blur-[100px] -z-10 rellax"
-         data-rellax-speed="-4"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-[-100px] right-[5%] w-[600px] h-[400px] bg-brand-purple-light rounded-full opacity-10 blur-[120px] -z-10 rellax"
-         data-rellax-speed="-5"
-        aria-hidden="true"
-      /> */}
-
-      {/* Wrap content in motion.div for staggered animation */}
+      {/* Rellax background element */}
       <motion.div
         className="relative z-10 max-w-7xl mx-auto text-center"
         variants={containerVariants}
