@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion'; // Keep motion for the paragraph if you want
-import { CaseUpper } from 'lucide-react';
 const LogoPlaceholder = ({ name }) => (
   <div className="flex items-center justify-center h-20 text-white opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 flex-shrink-0 min-w-[100px]"> {/* Added flex-shrink-0 and a min-width for consistent spacing */}
       <span className="font-semibold text-lg font-[Exo]">{name}</span>
